@@ -17,7 +17,6 @@ class TodoListItemView extends Backbone.View
 
   bindEvents: =>
     @model.on 'change:done', @updateDone
-    @model.on 'change:item', @changeItem
     @model.on 'remove', @remove
 
   render: =>
@@ -40,7 +39,10 @@ class TodoListItemView extends Backbone.View
     code = e.keyCode || e.which
     if code isnt 13 then return
 
-    @val = @$('input').val()
+    @val = @$input.val()
+
+    @$input.hide()
+    @$text.show().html @val
 
     if not @val then return
     @updateItem()
@@ -57,8 +59,5 @@ class TodoListItemView extends Backbone.View
   updateItem: =>
     @model.set 'item', @val
 
-  changeItem: =>
-    @$input.hide()
-    @$text.show().html @val
 
 BB.TodoListItemViewClass = TodoListItemView

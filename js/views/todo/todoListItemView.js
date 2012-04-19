@@ -9,7 +9,6 @@
     __extends(TodoListItemView, _super);
 
     function TodoListItemView() {
-      this.changeItem = __bind(this.changeItem, this);
       this.updateItem = __bind(this.updateItem, this);
       this.updateDone = __bind(this.updateDone, this);
       this.remove = __bind(this.remove, this);
@@ -43,7 +42,6 @@
 
     TodoListItemView.prototype.bindEvents = function() {
       this.model.on('change:done', this.updateDone);
-      this.model.on('change:item', this.changeItem);
       return this.model.on('remove', this.remove);
     };
 
@@ -71,7 +69,9 @@
       var code;
       code = e.keyCode || e.which;
       if (code !== 13) return;
-      this.val = this.$('input').val();
+      this.val = this.$input.val();
+      this.$input.hide();
+      this.$text.show().html(this.val);
       if (!this.val) return;
       return this.updateItem();
     };
@@ -90,11 +90,6 @@
 
     TodoListItemView.prototype.updateItem = function() {
       return this.model.set('item', this.val);
-    };
-
-    TodoListItemView.prototype.changeItem = function() {
-      this.$input.hide();
-      return this.$text.show().html(this.val);
     };
 
     return TodoListItemView;
