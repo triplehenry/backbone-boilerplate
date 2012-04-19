@@ -1,0 +1,16 @@
+.nav-view .nav-item {
+  cursor: pointer;
+  color: #999;
+}
+.nav-view .nav-item.active {
+  color: #fff;
+}
+.nav-view .nav-item.icon-home {
+  font-size: 15px;
+}
+.nav-view .nav-title {
+  font-weight: bold;
+  color: #fe7a15;
+  padding: 10px 10px 11px;
+  display: block;
+}

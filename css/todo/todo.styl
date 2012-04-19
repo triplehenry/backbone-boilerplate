@@ -1,0 +1,42 @@
+.input-view
+  input
+    padding 10px
+
+.todo-list-view
+  width 350px
+  margin 0 auto
+  text-align left
+
+  .list-item-view
+    background-color #eee
+    border 1px solid #ddd
+    padding 10px
+    margin-bottom 5px
+
+    input
+      display none
+      margin-bottom 0
+
+    .icon-set
+      float right
+      display none
+      i
+        margin-right 5px
+        cursor pointer
+      .icon-ok:hover
+        color green
+      .icon-edit:hover
+        color blue
+      .icon-remove:hover
+        color red
+  .list-item-view:hover
+    background-color #ddd
+    .icon-set
+      display inline-block
+
+  .list-item-view.done
+    background-color #5BA05B
+
+  .list-item-view.done:hover
+    .icon-set
+      display none

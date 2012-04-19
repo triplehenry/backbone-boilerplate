@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Backbone Boilerplate</title>
+
+  <link rel='stylesheet' href='css/common/bootstrap.min.css'>
+  <link rel='stylesheet' href='css/common/font-awesome.css'>
+  <link rel='stylesheet' href='css/page/page.css'>
+  <link rel='stylesheet' href='css/nav/nav.css'>
+  <link rel='stylesheet' href='css/todo/todo.css'>
+
+</head>
+<body>
+<div id='main' class='main'>
+  <div id='nav-view' class='nav-view'></div>
+  <div id='page-view' class='page-view'></div>
+</div>
+
+
+
+<script type='text/template' id='home-page-view-tpl'>
+  <div id='input-view' class='input-view'></div>
+  <div id='todo-list-view' class='todo-list-view'></div>
+</script>
+
+<script type='text/template' id='input-view-tpl'>
+  <h2>Todos</h2>
+  <form>
+    <input id='todo-input' class='span5' type='text' placeholder='Enter something....then hit enter'>
+  </form>
+</script>  
+
+<script type='text/template' id='todo-list-item-view-tpl'>
+  <span class='text'><%= item %></span>
+  <input class='span3' type='text'>
+  <span class='icon-set'>
+    <i class='icon-ok'></i>
+    <i class='icon-edit'></i>
+    <i class='icon-remove'></i>
+  </span>
+</script>  
+
+<script type='text/template' id='nav-view-tpl'>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class='nav-collapse'>
+        <ul class='nav'>
+          <li><span class='nav-title'>Backbone Boilerplate</span></li>
+          <li><a class='nav-item icon-home active' data-nav='home'></a></li>
+          <li><a class='nav-item' data-nav='about'>About</a></li>
+          <li><a class='nav-item' data-nav='contact'>Contact</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<script type='text/template' id='about-page-view-tpl'>
+  About Us page stuff
+</script>
+
+<script type='text/template' id='contact-page-view-tpl'>
+  Contact page stuff
+</script>
+
+
+<script type='text/javascript' src='js/lib/jquery-min.js'></script>
+<script type='text/javascript' src='js/lib/underscore-min.js'></script>
+<script type='text/javascript' src='js/lib/backbone-min.js'></script>
+
+<script type='text/javascript' src='js/init.js'></script>
+
+<script type='text/javascript' src='js/routers/appRouter.js'></script>
+
+<script type='text/javascript' src='js/models/page.js'></script>
+<script type='text/javascript' src='js/models/todo.js'></script>
+
+<script type='text/javascript' src='js/views/page/pageView.js'></script>
+<script type='text/javascript' src='js/views/page/homeView.js'></script>
+<script type='text/javascript' src='js/views/page/aboutView.js'></script>
+<script type='text/javascript' src='js/views/page/ContactView.js'></script>
+
+<script type='text/javascript' src='js/views/todo/inputView.js'></script>
+<script type='text/javascript' src='js/views/todo/todoListView.js'></script>
+<script type='text/javascript' src='js/views/todo/todoListItemView.js'></script>
+
+<script type='text/javascript' src='js/views/nav/navView.js'></script>
+
+</body>
+</html>
